@@ -1,23 +1,12 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
+from gpiozero import AngularServo
+from time import sleep
 
-# Outputs a 50% duty cycle PWM single on the 0th channel.
-# Connect an LED and resistor in series to the pin
-# to visualize duty cycle changes and its impact on brightness.
+servo = AngularServo(18, min_angle=0, max_angle=270, min_pulse_width=0.0005, max_pulse_width=0.0025)
 
-import board
-from adafruit_pca9685 import PCA9685
-
-# Create the I2C bus interface.
-i2c = board.I2C()  # uses board.SCL and board.SDA
-# i2c = busio.I2C(board.GP1, board.GP0)    # Pi Pico RP2040
-
-# Create a simple PCA9685 class instance.
-pca = PCA9685(i2c)
-
-# Set the PWM frequency to 60hz.
-pca.frequency = 60
-
-# Set the PWM duty cycle for channel zero to 50%. duty_cycle is 16 bits to match other PWM objects
-# but the PCA9685 will only actually give 12 bits of resolution.
-pca.channels[0].duty_cycle = 0x7FFF
+while (True):
+    servo.angle = 0
+    sleep(2)
+    servo.angle = 135
+    sleep(2)
+    servo.angle = 260
+    sleep(2)

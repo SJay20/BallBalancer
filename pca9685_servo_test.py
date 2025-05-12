@@ -19,17 +19,17 @@ servo3.set_pulse_width_range(500, 2500)
 while(True):
     servo1.angle = 0
     servo2.angle = 90
-    servo2.angle = 180
+    servo3.angle = 180
     sleep(2)
     servo1.angle = 90
     servo2.angle = 180
-    servo2.angle = 270
+    servo3.angle = 270
     sleep(2)
     servo1.angle = 180
     servo2.angle = 270
-    servo2.angle = 0
+    servo3.angle = 0
     sleep(2)
     servo1.angle = 270
-    servo2.angle = 0
-    servo2.angle = 90
+    servo2.angleß = 0
+    servo3.angle = 90
     sleep(2)

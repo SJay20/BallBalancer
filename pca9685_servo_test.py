@@ -30,6 +30,6 @@ while(True):
     servo3.angle = 0
     sleep(2)
     servo1.angle = 270
-    servo2.angleß = 0
+    servo2.angle = 0
     servo3.angle = 90
     sleep(2)

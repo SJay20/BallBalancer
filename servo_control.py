@@ -10,22 +10,22 @@ SERVO_HOME = 180 - 22.894004
 
 kit = ServoKit(channels=16)
 
-servo1 = kit.servo[0]
-servo2 = kit.servo[1]
-servo3 = kit.servo[2]
+servoA = kit.servo[0]
+servoB = kit.servo[1]
+servoC = kit.servo[2]
 
-servo1.actuation_range = 270
-servo1.set_pulse_width_range(500, 2500)
+servoA.actuation_range = 270
+servoA.set_pulse_width_range(500, 2500)
 
-servo2.actuation_range = 270
-servo2.set_pulse_width_range(500, 2500)
+servoB.actuation_range = 270
+servoB.set_pulse_width_range(500, 2500)
 
-servo3.actuation_range = 270
-servo3.set_pulse_width_range(500, 2500)
+servoC.actuation_range = 270
+servoC.set_pulse_width_range(500, 2500)
 
-servo1.angle = SERVO_HOME
-servo2.angle = SERVO_HOME
-servo3.angle = SERVO_HOME
+servoA.angle = SERVO_HOME
+servoB.angle = SERVO_HOME
+servoC.angle = SERVO_HOME
 sleep(2)
 
 solver = ThreeRPSInvKinematicsSolver(8.5, 9.0, 4.75, 5.0)
@@ -36,7 +36,7 @@ print("Theta A: " + str(thetaA))
 print("Theta B: " + str(thetaB))
 print("Theta C: " + str(thetaC))
 
-servo1.angle = 180 - thetaA
-servo2.angle = 180 - thetaB
-servo3.angle = 180 - thetaC
+servoA.angle = 180 - thetaA
+servoB.angle = 180 - thetaB
+servoC.angle = 180 - thetaC
 

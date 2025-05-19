@@ -21,7 +21,7 @@ class ThreeRPSInvKinematicsSolver():
                 z = hz + self.e * ny
                 mag = sqrt(pow(y, 2) + pow(z, 2))
                 angle = acos(y / mag) + acos((pow(mag, 2) + pow(self.f, 2) - pow(self.g, 2)) / (2 * mag * self.f))
-            case 2: # Leg A
+            case 2: # Leg B
                 x = (sqrt(3) / 2) * (self.e * (1 - (pow(nx, 2) + sqrt(3) * nx * ny) / (nz + 1)) - self.d)
                 y = x / sqrt(3)
                 z = hz - (self.e / 2) * (sqrt(3) * nx + ny)
@@ -36,5 +36,3 @@ class ThreeRPSInvKinematicsSolver():
 
         return 180 - (angle * (180 / pi))
     
-
-

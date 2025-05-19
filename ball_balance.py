@@ -104,7 +104,7 @@ def PID(x, y):
     # continues moving platform and waits until 20 millis has elapsed
     timeI = time()
     while(time() - timeI < 20):
-        moveTo(6, output[0], output[1])
+        moveTo(6, -output[0], -output[1])
     
 
 while True:
